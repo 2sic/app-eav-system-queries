@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.10.00" ExportDate="2022-10-17T20:42:13.3676133+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.10.00" ExportDate="2022-10-17T22:28:46.8846987+02:00">
   <Header>
     <App Guid="d073fa80-62b6-4a76-8cf7-cce982a86654" />
     <Language Default="en-us" />
@@ -397,7 +397,7 @@
       <Value Key="AllowEdit" Value="True" Type="Boolean" />
       <Value Key="Description" Value="Retrieve all roles of the current site." Type="String" />
       <Value Key="Name" Value="Eav.Queries.Global.Roles" Type="String" />
-      <Value Key="Params" Value="FilterRoleIds=[QueryString:FilterRoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]" Type="String" />
+      <Value Key="Params" Value="RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]" Type="String" />
       <Value Key="StreamsOut" Value="Default,Header" Type="String" />
       <Value Key="StreamWiring" Value="e5837542-beeb-4528-829b-2983d11e566a:Default&gt;Out:Default" Type="String" />
       <Value Key="TestParameters" Value="[Params:ExcludeRoleIds]=351" Type="String" />
@@ -413,7 +413,40 @@
       <Value Key="ExcludeRoleIds" Value="[Params:ExcludeRoleIds]" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="FilterRoleIds" Value="[Params:FilterRoleIds]" Type="String">
+      <Value Key="RoleIds" Value="[Params:RoleIds]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="dd3021bf-1b9a-4d10-8dde-12efe9832f47" Json="True">
+      <Value Key="AllowEdit" Value="True" Type="Boolean" />
+      <Value Key="Description" Value="Get users of this site." Type="String" />
+      <Value Key="Name" Value="Eav.Queries.Global.Users" Type="String" />
+      <Value Key="Params" Value="UserIds=[QueryString:UserIds]&#xA;ExcludeUserIds=[QueryString:ExcludeUserIds]&#xA;RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]&#xA;IncludeSystemAdmins=[QueryString:IncludeSystemAdmins]" Type="String" />
+      <Value Key="StreamsOut" Value="Default,Header,Roles" Type="String" />
+      <Value Key="StreamWiring" Value="71a257cd-cebf-4c3c-a588-c46e9244a398:Default&gt;Out:Default&#xD;&#xA;71a257cd-cebf-4c3c-a588-c46e9244a398:Roles&gt;Out:Roles" Type="String" />
+      <Value Key="TestParameters" Value="[Params:IncludeSystemAdmins]=true&#xA;[QueryString:IncludeSystemAdmins]=true" Type="String" />
+      <Value Key="VisualDesignerData" Value="" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="71a257cd-cebf-4c3c-a588-c46e9244a398" Json="True" KeyGuid="dd3021bf-1b9a-4d10-8dde-12efe9832f47">
+      <Value Key="Description" Value="" Type="String" />
+      <Value Key="Name" Value="Users BETA - DO NOT USE YET" Type="String" />
+      <Value Key="PartAssemblyAndType" Value="93ac53c6-adc6-4218-b979-48d1071a5765" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 400,&#xD;&#xA;  &quot;Left&quot;: 280&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="ac11fae7-1916-4d2d-8583-09872e1e6966" AttributeSetName="UsersDataSourceConfig" EntityGUID="580dc00d-497c-45b4-9422-c8e426d34e4a" Json="True" KeyGuid="71a257cd-cebf-4c3c-a588-c46e9244a398">
+      <Value Key="ExcludeRoleIds" Value="[Params:ExcludeRoleIds]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="ExcludeUserIds" Value="[Params:ExcludeUserIds]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="IncludeSystemAdmins" Value="[Params:IncludeSystemAdmins]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="RoleIds" Value="[Params:RoleIds]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="UserIds" Value="[Params:UserIds]" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
     </Entity>
