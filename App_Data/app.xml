@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="15.02.00" ExportDate="2023-02-01T18:17:53.9881109+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="15.04.00" ExportDate="2023-03-10T12:07:31.1385133+01:00">
   <Header>
     <App Guid="d073fa80-62b6-4a76-8cf7-cce982a86654" />
     <Language Default="en-us" />
@@ -13,7 +13,15 @@
       <Attributes />
     </AttributeSet>
     <AttributeSet StaticName="App-Settings" Name="App-Settings" Scope="System.App" AlwaysShareConfiguration="false">
-      <Attributes />
+      <Attributes>
+        <Attribute StaticName="ASettingInSiteAndGlobal" Type="String" IsTitle="true">
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6ba3b16b-843e-4d7d-ac29-a830ba6754b1" Json="True" KeyNumber="32566">
+            <Value Key="InputType" Value="string-default" Type="String" />
+            <Value Key="Name" Value="ASettingInSiteAndGlobal" Type="String" />
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+          </Entity>
+        </Attribute>
+      </Attributes>
     </AttributeSet>
     <AttributeSet StaticName="b690e54c-675e-4e21-9765-e4342e877b7b" Name="Test" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
@@ -122,7 +130,11 @@
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="App-Settings" AttributeSetName="App-Settings" EntityGUID="29c6521d-f721-42d3-a231-53f64a65dddf" KeyNumber="831" />
+    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="App-Settings" AttributeSetName="App-Settings" EntityGUID="29c6521d-f721-42d3-a231-53f64a65dddf" KeyNumber="831">
+      <Value Key="ASettingInSiteAndGlobal" Value="local text on app..." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
     <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="App-Resources" AttributeSetName="App-Resources" EntityGUID="b0495092-3d10-4586-81ea-1cdf1ee1c223" KeyNumber="831" />
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="547c2ab9-2e6e-427f-8087-47b059bb9523" Json="True">
       <Value Key="ContentTypeStaticName" Value="" Type="String" />
@@ -140,22 +152,56 @@
       <Value Key="ViewNameInUrl" Value="" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="e8a702d2-eccd-4b0f-83bd-600d8a8449d9" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Retrieve full list of all zones" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Zones" Type="String" />
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="a942aaca-088c-41f4-b938-f625a5170ab0:Default&gt;Out:Default&#xD;&#xA;e60248e9-4dce-475a-a99d-61d11a6fb1cc:Default&gt;a942aaca-088c-41f4-b938-f625a5170ab0:Default" Type="String" />
-      <Value Key="TestParameters" Value="[Module:ModuleID]=6936" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Retrieve full list of all zones" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Zones" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="a942aaca-088c-41f4-b938-f625a5170ab0:Default&gt;Out:Default&#xD;&#xA;e60248e9-4dce-475a-a99d-61d11a6fb1cc:Default&gt;a942aaca-088c-41f4-b938-f625a5170ab0:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="d680fba2-9ab7-417a-8821-db23c15f4a2e" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get all apps of a zone" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Apps" Type="String" />
-      <Value Key="Params" Value="" Type="String" />
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="3e0daa8d-2c13-4b73-94f9-cae9d1c412e8:Default&gt;666576b7-65f7-4d93-96ca-238ef1d336dd:Default&#xD;&#xA;666576b7-65f7-4d93-96ca-238ef1d336dd:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[QueryString:ZoneId]=2" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all apps of a zone (site)" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Apps" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="3e0daa8d-2c13-4b73-94f9-cae9d1c412e8:Default&gt;666576b7-65f7-4d93-96ca-238ef1d336dd:Default&#xD;&#xA;666576b7-65f7-4d93-96ca-238ef1d336dd:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[QueryString:ZoneId]=2" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="fabc849e-b426-42ea-8e1c-c04e69facd9b" AttributeSetName="ToSic.Eav.DataSources.Apps" EntityGUID="1b189314-f77c-4a6a-9e29-7993448d5d7d" Json="True" KeyGuid="fdafd2da-8711-4c12-adcc-e617f5853ec4">
       <Value Key="Title" Value="" Type="String" />
@@ -166,12 +212,30 @@
       <Value Key="ZoneId" Value="[QueryString:ZoneId]" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="e57cfebc-2c9f-4feb-95e0-9362049b7502" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Retrieves the queries of the current app (usually for drop-downs)" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Queries" Type="String" />
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="89b3116e-efab-4fee-8a7c-afe1e28825d2:DataPipeline&gt;3b01ba93-62ea-4f73-b150-c8129eb82cab:Default&#xD;&#xA;3b01ba93-62ea-4f73-b150-c8129eb82cab:Default&gt;40460932-1d32-4005-8bd1-c45f8599da24:Default&#xD;&#xA;40460932-1d32-4005-8bd1-c45f8599da24:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[Module:ModuleID]=6936" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Retrieves the queries of the current app (usually for drop-downs)" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Queries" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="89b3116e-efab-4fee-8a7c-afe1e28825d2:DataPipeline&gt;3b01ba93-62ea-4f73-b150-c8129eb82cab:Default&#xD;&#xA;3b01ba93-62ea-4f73-b150-c8129eb82cab:Default&gt;40460932-1d32-4005-8bd1-c45f8599da24:Default&#xD;&#xA;40460932-1d32-4005-8bd1-c45f8599da24:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="89b3116e-efab-4fee-8a7c-afe1e28825d2" Json="True" KeyGuid="e57cfebc-2c9f-4feb-95e0-9362049b7502">
       <Value Key="Description" Value="" Type="String" />
@@ -222,20 +286,56 @@
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 320,&#xD;&#xA;  &quot;Left&quot;: 420&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="ede9fc6f-34bb-4a1f-8482-6dd0742e365f" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Retrieve the content-types of an app" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.ContentTypes" Type="String" />
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="db8515d1-e8c9-4e84-a1ec-970376ea9922:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:AppId]=&#xA;[QueryString:Scope]=Default" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Retrieve the content-types of an app" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.ContentTypes" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="db8515d1-e8c9-4e84-a1ec-970376ea9922:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:AppId]=&#xA;[QueryString:Scope]=Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="95041b6d-8669-4941-a516-47725acfe6ec" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get all attributes of a content-type" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Attributes" Type="String" />
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="018a942b-1bad-4124-978c-0d0c35633be1:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:ContentTypeName]=@All" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all attributes of a content-type" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Attributes" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="018a942b-1bad-4124-978c-0d0c35633be1:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:ContentTypeName]=@All" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="440345b9-8d69-4cd2-b7e8-f7377951b0a6" Json="True">
       <Value Key="AllowEdit" Value="True" Type="Boolean" />
@@ -267,13 +367,13 @@
       <Value Key="AllowEdit" Value="True" Type="Boolean">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="Retrieve streams and fields of a query. IMPORTANT: The test-values should not be changed - they must be [QueryString:QueryName]=Eav.Queries.Global.Apps and [QueryString:StreamName]=Default" Type="String">
+      <Value Key="Description" Value="Retrieve streams and fields of a query. " Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Eav.Queries.Global.QueryInfo" Type="String">
+      <Value Key="Name" Value="System.QueryInfo" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Params" Value="ReplaceThis=27&#xA;ReplaceThisAsWell=[QueryString:Id]" Type="String">
+      <Value Key="Params" Value="" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="StreamsOut" Value="ListContent,Default,Attributes" Type="String">
@@ -282,7 +382,7 @@
       <Value Key="StreamWiring" Value="c11d7835-035d-441c-8cbc-287aaecbea81:Attributes&gt;Out:Attributes&#xD;&#xA;c11d7835-035d-441c-8cbc-287aaecbea81:Default&gt;Out:Default" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="TestParameters" Value="[Module:Id]=6936&#xA;[QueryString:QueryName]=Eav.Queries.Global.Apps&#xA;[QueryString:StreamName]=Default" Type="String">
+      <Value Key="TestParameters" Value="[QueryString:QueryName]=Eav.Queries.Global.Apps&#xA;[QueryString:StreamName]=Default" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="VisualDesignerData" Value="" Type="String">
@@ -379,13 +479,30 @@
       <Value Key="Title" Value="" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="34acb79b-21e1-423e-bdec-b67f4a5c8c85" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get all pages of the current site. " Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Pages" Type="String" />
-      <Value Key="Params" Value="" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="b1fa7bee-c137-4e60-b8b5-3588b9c16b9a:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all pages of the current site. " Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Pages" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="b1fa7bee-c137-4e60-b8b5-3588b9c16b9a:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="b1fa7bee-c137-4e60-b8b5-3588b9c16b9a" Json="True" KeyGuid="34acb79b-21e1-423e-bdec-b67f4a5c8c85">
       <Value Key="Description" Value="" Type="String" />
@@ -421,18 +538,34 @@
       <Value Key="Title" Value="Accessible for content editors" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="f54e66aa-0ed1-47ca-b15d-774f3a5d60ca" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Retrieve all roles of the current site." Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Roles" Type="String" />
-      <Value Key="Params" Value="RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="e5837542-beeb-4528-829b-2983d11e566a:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[Params:ExcludeRoleIds]=351" Type="String" />
-      <Value Key="VisualDesignerData" Value="" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Retrieve all roles of the current site." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Roles" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="e5837542-beeb-4528-829b-2983d11e566a:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[Params:ExcludeRoleIds]=351" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="e5837542-beeb-4528-829b-2983d11e566a" Json="True" KeyGuid="f54e66aa-0ed1-47ca-b15d-774f3a5d60ca">
       <Value Key="Description" Value="" Type="String" />
-      <Value Key="Name" Value="Roles - BETA - DO NOT USE YET" Type="String" />
+      <Value Key="Name" Value="Roles" Type="String" />
       <Value Key="PartAssemblyAndType" Value="eee54266-d7ad-4f5e-9422-2d00c8f93b45" Type="String" />
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 440,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
     </Entity>
@@ -445,22 +578,41 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="dd3021bf-1b9a-4d10-8dde-12efe9832f47" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get users of this site." Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Users" Type="String" />
-      <Value Key="Params" Value="UserIds=[QueryString:UserIds]&#xA;ExcludeUserIds=[QueryString:ExcludeUserIds]&#xA;RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]&#xA;IncludeSystemAdmins=[QueryString:IncludeSystemAdmins]" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header,Roles" Type="String" />
-      <Value Key="StreamWiring" Value="71a257cd-cebf-4c3c-a588-c46e9244a398:Default&gt;Out:Default&#xD;&#xA;71a257cd-cebf-4c3c-a588-c46e9244a398:Roles&gt;Out:Roles" Type="String" />
-      <Value Key="TestParameters" Value="[Params:IncludeSystemAdmins]=true&#xA;[QueryString:IncludeSystemAdmins]=true" Type="String" />
-      <Value Key="VisualDesignerData" Value="" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get users of this site." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Users" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="UserIds=[QueryString:UserIds]&#xA;ExcludeUserIds=[QueryString:ExcludeUserIds]&#xA;RoleIds=[QueryString:RoleIds]&#xA;ExcludeRoleIds=[QueryString:ExcludeRoleIds]&#xA;IncludeSystemAdmins=[QueryString:IncludeSystemAdmins]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header,Roles" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="71a257cd-cebf-4c3c-a588-c46e9244a398:Default&gt;Out:Default&#xD;&#xA;71a257cd-cebf-4c3c-a588-c46e9244a398:Roles&gt;Out:Roles" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[QueryString:IncludeSystemAdmins]=false" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="71a257cd-cebf-4c3c-a588-c46e9244a398" Json="True" KeyGuid="dd3021bf-1b9a-4d10-8dde-12efe9832f47">
       <Value Key="Description" Value="" Type="String" />
-      <Value Key="Name" Value="Users BETA - DO NOT USE YET" Type="String" />
+      <Value Key="Name" Value="Users" Type="String" />
       <Value Key="PartAssemblyAndType" Value="93ac53c6-adc6-4218-b979-48d1071a5765" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 400,&#xD;&#xA;  &quot;Left&quot;: 280&#xD;&#xA;}" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 380,&#xD;&#xA;  &quot;Left&quot;: 380&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="ac11fae7-1916-4d2d-8583-09872e1e6966" AttributeSetName="UsersDataSourceConfig" EntityGUID="580dc00d-497c-45b4-9422-c8e426d34e4a" Json="True" KeyGuid="71a257cd-cebf-4c3c-a588-c46e9244a398">
+      <Value Key="AddRoles" Value="true" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
       <Value Key="ExcludeRoleIds" Value="[Params:ExcludeRoleIds]" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
@@ -561,14 +713,30 @@
       <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="34693704-fa1f-48bd-a5d7-0ace93d1ee3e" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get all the scopes of the current App" Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Scopes" Type="String" />
-      <Value Key="Params" Value="" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="0d20bfd8-52c8-411a-bf78-fc6908c70ad1:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all the data scopes of the current App (like folders to organize content-types)" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Scopes" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="0d20bfd8-52c8-411a-bf78-fc6908c70ad1:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="0d20bfd8-52c8-411a-bf78-fc6908c70ad1" Json="True" KeyGuid="34693704-fa1f-48bd-a5d7-0ace93d1ee3e">
       <Value Key="Description" Value="" Type="String" />
@@ -580,14 +748,30 @@
       <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="05ab1404-55f3-45f4-8252-a3c9bd59d6f6" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Retrieve settings entities from global App and from current App." Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.SettingsEntities" Type="String" />
-      <Value Key="Params" Value="ContentType=[QueryString:ContentType]" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="167d3279-5f5a-4d38-94e2-bbfa8059992f:Default&gt;f2763a09-34f5-489c-a66e-47e898f06c8d:Default&#xD;&#xA;9ff0fabc-8105-4c3c-8f76-15440ff4140a:Default&gt;27ca5071-eba1-4c0e-8101-d63f8b5e2404:Default&#xD;&#xA;f2763a09-34f5-489c-a66e-47e898f06c8d:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Preset&#xD;&#xA;27ca5071-eba1-4c0e-8101-d63f8b5e2404:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Default&#xD;&#xA;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Default&gt;706d272f-9cd5-4c10-80a7-cfa4128a8e7b:Default&#xD;&#xA;c51b4457-17eb-4be9-838a-221e223956dd:Default&gt;88053e7a-b79c-4987-856d-fde73ac0b136:Default&#xD;&#xA;88053e7a-b79c-4987-856d-fde73ac0b136:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:System&#xD;&#xA;706d272f-9cd5-4c10-80a7-cfa4128a8e7b:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="[QueryString:ContentType]=StringWysiwygConfiguration" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Retrieve settings entities from global App and from current App." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.SettingsEntities" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="ContentType=[QueryString:ContentType]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="167d3279-5f5a-4d38-94e2-bbfa8059992f:Default&gt;f2763a09-34f5-489c-a66e-47e898f06c8d:Default&#xD;&#xA;9ff0fabc-8105-4c3c-8f76-15440ff4140a:Default&gt;27ca5071-eba1-4c0e-8101-d63f8b5e2404:Default&#xD;&#xA;f2763a09-34f5-489c-a66e-47e898f06c8d:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Preset&#xD;&#xA;27ca5071-eba1-4c0e-8101-d63f8b5e2404:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Default&#xD;&#xA;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:Default&gt;706d272f-9cd5-4c10-80a7-cfa4128a8e7b:Default&#xD;&#xA;c51b4457-17eb-4be9-838a-221e223956dd:Default&gt;88053e7a-b79c-4987-856d-fde73ac0b136:Default&#xD;&#xA;88053e7a-b79c-4987-856d-fde73ac0b136:Default&gt;513065d0-4dc8-4297-aea6-6f4efa3ff4d8:System&#xD;&#xA;706d272f-9cd5-4c10-80a7-cfa4128a8e7b:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="[QueryString:ContentType]=StringWysiwygConfiguration" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="167d3279-5f5a-4d38-94e2-bbfa8059992f" Json="True" KeyGuid="05ab1404-55f3-45f4-8252-a3c9bd59d6f6">
       <Value Key="Description" Value="" Type="String" />
@@ -686,7 +870,7 @@
       <Value Key="Description" Value="List of Metadata TargetTypes, which determine what kind of target the metadata is for." Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Eav.Queries.Global.MetadataTargetTypes" Type="String">
+      <Value Key="Name" Value="System.MetadataTargetTypes" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="Params" Value="" Type="String">
@@ -792,14 +976,30 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="1e8d613c-e68b-471a-a438-c9325e53f003" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean" />
-      <Value Key="Description" Value="Get a list of all licenses in the system." Type="String" />
-      <Value Key="Name" Value="Eav.Queries.Global.Licenses" Type="String" />
-      <Value Key="Params" Value="" Type="String" />
-      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="70cab874-14f8-41b1-8991-def591ae0de8:Default&gt;Out:Default" Type="String" />
-      <Value Key="TestParameters" Value="" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get a list of all licenses in the system." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Licenses" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="70cab874-14f8-41b1-8991-def591ae0de8:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="70cab874-14f8-41b1-8991-def591ae0de8" Json="True" KeyGuid="1e8d613c-e68b-471a-a438-c9325e53f003">
       <Value Key="Description" Value="" Type="String" />
@@ -814,7 +1014,7 @@
       <Value Key="Description" Value="Retrieve a list of all features and their state." Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Eav.Queries.Global.Features" Type="String">
+      <Value Key="Name" Value="System.Features" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="Params" Value="" Type="String">
@@ -844,6 +1044,127 @@
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="32698880-1c2e-41ab-bcfc-420091d3263f" AttributeSetName="SystemExportDecorator" EntityGUID="6f8ba371-8e2b-4148-aeaa-815519ff6549" Json="True" KeyGuid="abb9d5ee-3333-4a15-9539-36e1e0f00953">
       <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="310cc86c-2281-4614-8605-a423c87105e9" Json="True">
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all the sites in the system." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Sites" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="39f544b2-45a2-4229-9e26-1f95c950f8f6:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="39f544b2-45a2-4229-9e26-1f95c950f8f6" Json="True" KeyGuid="310cc86c-2281-4614-8605-a423c87105e9">
+      <Value Key="Description" Value="" Type="String" />
+      <Value Key="Name" Value="Sites" Type="String" />
+      <Value Key="PartAssemblyAndType" Value="a11c28fb-7d8d-40a2-a22c-50beaa019e41" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 320,&#xD;&#xA;  &quot;Left&quot;: 400&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="32698880-1c2e-41ab-bcfc-420091d3263f" AttributeSetName="SystemExportDecorator" EntityGUID="71f07571-ac86-46b3-ab6e-a840d39177b6" Json="True" KeyGuid="310cc86c-2281-4614-8605-a423c87105e9">
+      <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="952633f8-c04b-4592-9db9-a3e6ecf2dbb5" Json="True">
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all the files from an App" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.AppFiles" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header,Files,Folders" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="da65ba2b-ae16-4446-84f7-90d76c98c513:Default&gt;Out:Default&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Files&gt;Out:Files&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Folders&gt;Out:Folders" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="da65ba2b-ae16-4446-84f7-90d76c98c513" Json="True" KeyGuid="952633f8-c04b-4592-9db9-a3e6ecf2dbb5">
+      <Value Key="Description" Value="" Type="String" />
+      <Value Key="Name" Value="AppFiles" Type="String" />
+      <Value Key="PartAssemblyAndType" Value="3fe6c215-4c37-45c1-8883-b4b2a47162a7" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 380,&#xD;&#xA;  &quot;Left&quot;: 420&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="2317bfff-79bc-4812-89dd-0e0b9cba1cb9" Json="True">
+      <Value Key="AllowEdit" Value="True" Type="Boolean">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Get all settings of the current app incl. global and preset settings." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="System.Settings" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Params" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsOut" Value="Default,Header" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamWiring" Value="b897b9c9-4dc2-4c2e-959b-eca18871b062:Default&gt;Out:Default" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="TestParameters" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="b897b9c9-4dc2-4c2e-959b-eca18871b062" Json="True" KeyGuid="2317bfff-79bc-4812-89dd-0e0b9cba1cb9">
+      <Value Key="Description" Value="" Type="String" />
+      <Value Key="Name" Value="App Stack" Type="String" />
+      <Value Key="PartAssemblyAndType" Value="60806cb1-0c76-4c1e-8dfe-dcec94726f8d" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 300,&#xD;&#xA;  &quot;Left&quot;: 460&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="32698880-1c2e-41ab-bcfc-420091d3263f" AttributeSetName="SystemExportDecorator" EntityGUID="97754be9-8b32-483b-8dea-a36cc17ef0c3" Json="True" KeyGuid="2317bfff-79bc-4812-89dd-0e0b9cba1cb9">
+      <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="f9aca0f0-1b1b-4414-b42e-b337de124124" AttributeSetName="SystemStackConfig" EntityGUID="a84c055f-55e1-4faa-a5d7-e49f118bcdb6" Json="True" KeyGuid="b897b9c9-4dc2-4c2e-959b-eca18871b062">
+      <Value Key="AddValues" Value="" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="StackNames" Value="Settings" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="5e958dc6-2922-4d68-835c-7b9711538b12" AttributeSetName="NoteDecorator" EntityGUID="f61dbc48-f992-41c2-9d04-f6aa0d6342fa" Json="True" KeyGuid="2889c62f-9c07-4027-b85e-af7ddf55f44f">
+      <Value Key="Note" Value="&lt;p&gt;IMPORTANT: The test-values should not be changed - they must be [QueryString:QueryName]=Eav.Queries.Global.Apps and [QueryString:StreamName]=Default&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="NoteType" Value="warning" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="IMPORTANT: The test-values sho..." Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
   </Entities>
   <PortalFiles />
