@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.08.00" ExportDate="2023-11-07T21:29:41.0747818+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.08.00" ExportDate="2023-11-17T11:56:52.9602533+01:00">
   <Header>
     <App Guid="d073fa80-62b6-4a76-8cf7-cce982a86654" />
     <Language Default="en-us" />
@@ -284,33 +284,15 @@
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 320,&#xD;&#xA;  &quot;Left&quot;: 420&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="ede9fc6f-34bb-4a1f-8482-6dd0742e365f" Json="True">
-      <Value Key="AllowEdit" Value="True" Type="Boolean">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="Description" Value="Retrieve the content-types of an app" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="HiddenInQueryPicker" Value="True" Type="Boolean">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="Name" Value="System.ContentTypes" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="Params" Value="" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="StreamWiring" Value="db8515d1-e8c9-4e84-a1ec-970376ea9922:Default&gt;Out:Default" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:AppId]=&#xA;[QueryString:Scope]=Default" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
+      <Value Key="AllowEdit" Value="True" Type="Boolean" />
+      <Value Key="Description" Value="Retrieve the content-types of an app" Type="String" />
+      <Value Key="HiddenInQueryPicker" Value="True" Type="Boolean" />
+      <Value Key="Name" Value="System.ContentTypes" Type="String" />
+      <Value Key="Params" Value="" Type="String" />
+      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
+      <Value Key="StreamWiring" Value="db8515d1-e8c9-4e84-a1ec-970376ea9922:Default&gt;Out:Default" Type="String" />
+      <Value Key="TestParameters" Value="[Module:ModuleID]=6936&#xA;[QueryString:AppId]=&#xA;[QueryString:Scope]=Default" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="95041b6d-8669-4941-a516-47725acfe6ec" Json="True">
       <Value Key="AllowEdit" Value="True" Type="Boolean">
