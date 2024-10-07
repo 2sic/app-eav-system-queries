@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="18.01.01" ExportDate="2024-09-25T18:20:58.1760648+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="18.01.01" ExportDate="2024-10-07T13:32:19.5165431+02:00">
   <Header>
     <App Guid="d073fa80-62b6-4a76-8cf7-cce982a86654" />
     <Language Default="en-us" />
@@ -1051,25 +1051,25 @@
       <Value Key="AllowEdit" Value="True" Type="Boolean">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="Get all the files from an App" Type="String">
+      <Value Key="Description" Value="Get all the files / folders from an App (new v18.02)" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="HiddenInQueryPicker" Value="True" Type="Boolean">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="System.AppFiles" Type="String">
+      <Value Key="Name" Value="System.AppAssets" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="Params" Value="" Type="String">
+      <Value Key="Params" Value="RootFolder=[QueryString:RootFolder||/]&#xA;FileFilter=[QueryString:FileFilter||*.*]&#xA;SearchSubfolders=[QueryString:SearchSubfolders||false]&#xA;AssetType=[QueryString:AssetType||Files]&#xA;" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="StreamsOut" Value="Default,Header,Files,Folders" Type="String">
+      <Value Key="StreamsOut" Value="Default,Header,Files,Folders,All" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="StreamWiring" Value="da65ba2b-ae16-4446-84f7-90d76c98c513:Default&gt;Out:Default&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Files&gt;Out:Files&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Folders&gt;Out:Folders" Type="String">
+      <Value Key="StreamWiring" Value="da65ba2b-ae16-4446-84f7-90d76c98c513:Files&gt;Out:Files&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Folders&gt;Out:Folders&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:All&gt;Out:All&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Files&gt;0ccade9c-343a-4d4f-b037-66ed381d8cee:Files&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:Folders&gt;0ccade9c-343a-4d4f-b037-66ed381d8cee:Folders&#xD;&#xA;da65ba2b-ae16-4446-84f7-90d76c98c513:All&gt;0ccade9c-343a-4d4f-b037-66ed381d8cee:All&#xD;&#xA;0ccade9c-343a-4d4f-b037-66ed381d8cee:Default&gt;Out:Default" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
-      <Value Key="TestParameters" Value="" Type="String">
+      <Value Key="TestParameters" Value="[QueryString:RootFolder]=/&#xA;[QueryString:FileFilter]=*.*&#xA;[QueryString:SearchSubfolders]=false&#xA;[QueryString:AssetType]=Folders" Type="String">
         <Dimension DimensionID="182" ReadOnly="false" />
       </Value>
       <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String">
@@ -1080,7 +1080,7 @@
       <Value Key="Description" Value="" Type="String" />
       <Value Key="Name" Value="AppFiles" Type="String" />
       <Value Key="PartAssemblyAndType" Value="3fe6c215-4c37-45c1-8883-b4b2a47162a7" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 380,&#xD;&#xA;  &quot;Left&quot;: 420&#xD;&#xA;}" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 520,&#xD;&#xA;  &quot;Left&quot;: 200&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="DataPipeline" AttributeSetName="DataPipeline" EntityGUID="2317bfff-79bc-4812-89dd-0e0b9cba1cb9" Json="True">
       <Value Key="AllowEdit" Value="True" Type="Boolean">
@@ -1223,7 +1223,7 @@
       <Value Key="Name" Value="System.UiPickers" Type="String" />
       <Value Key="Params" Value="" Type="String" />
       <Value Key="StreamsOut" Value="Default,Header" Type="String" />
-      <Value Key="StreamWiring" Value="6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCustomList&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:CustomList&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceEntity&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Entity&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceQuery&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Query&#xD;&#xA;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Default&gt;Out:Default&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCustomCsv&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Default&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCss&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:UiPickerSourceCss" Type="String" />
+      <Value Key="StreamWiring" Value="6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCustomList&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:CustomList&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceEntity&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Entity&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceQuery&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Query&#xD;&#xA;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Default&gt;Out:Default&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCustomCsv&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:Default&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceCss&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:UiPickerSourceCss&#xD;&#xA;6c04fa59-082e-428c-9a1f-ac511e3d04b6:UiPickerSourceAppAssets&gt;e73021f3-b121-4fc0-81c3-a8800bbd14d9:UiPickerSourceAppAssets" Type="String" />
       <Value Key="TestParameters" Value="" Type="String" />
       <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
     </Entity>
@@ -1238,23 +1238,6 @@
       <Value Key="Name" Value="Merge Streams" Type="String" />
       <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.StreamMerge, ToSic.Eav.DataSources" Type="String" />
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 200,&#xD;&#xA;  &quot;Left&quot;: 400&#xD;&#xA;}" Type="String" />
-    </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="d7f2e4fa-5306-41bb-a3cd-d9529c838879" AttributeSetName="🧑‍💻SystemExportConfiguration" EntityGUID="75c0170d-e0ce-4f32-94c6-9afdee66130b" Json="True">
-      <Value Key="EntitiesWithMetadata" Value="True" Type="Boolean">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="ExportFormat" Value="json" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="FileName" Value="ui-pickers-experimental.json" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="Name" Value="Export Bundle: UiPicker Queries" Type="String">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
-      <Value Key="PreserveMarkers" Value="False" Type="Boolean">
-        <Dimension DimensionID="182" ReadOnly="false" />
-      </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="32698880-1c2e-41ab-bcfc-420091d3263f" AttributeSetName="SystemExportDecorator" EntityGUID="acba9b5f-fead-4181-8a36-e39281fc7288" Json="True" KeyGuid="68af1a61-9362-4cc5-8e60-cd9c37fe88c3">
       <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
@@ -1447,6 +1430,34 @@
       <Value Key="Name" Value="Metadata Targets" Type="String" />
       <Value Key="PartAssemblyAndType" Value="afaf73d9-775c-4932-aebd-23e898b1643e" Type="String" />
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 220,&#xD;&#xA;  &quot;Left&quot;: 620&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="477d5de4-5ffa-43ef-8553-37354cb27660" AttributeSetName="AppFilesDataSourceConfig" EntityGUID="6059b2f9-28d6-4673-b165-540c6d85828b" Json="True" KeyGuid="da65ba2b-ae16-4446-84f7-90d76c98c513">
+      <Value Key="FileFilter" Value="[Params:FileFilter]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="RootFolder" Value="[Params:RootFolder]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchSubfolders" Value="[Params:SearchSubfolders]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="App Files" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="32698880-1c2e-41ab-bcfc-420091d3263f" AttributeSetName="SystemExportDecorator" EntityGUID="72559058-b7e0-4be1-bca6-ecf809c55b14" Json="True" KeyGuid="952633f8-c04b-4592-9db9-a3e6ecf2dbb5">
+      <Value Key="Configuration" Value="1fac6138-39c7-4ab6-9c54-9cf3e4ffd5ed" Type="Entity" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="0ccade9c-343a-4d4f-b037-66ed381d8cee" Json="True" KeyGuid="952633f8-c04b-4592-9db9-a3e6ecf2dbb5">
+      <Value Key="Description" Value="" Type="String" />
+      <Value Key="Name" Value="Pick Stream" Type="String" />
+      <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.StreamPick, ToSic.Eav.DataSources" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 260,&#xD;&#xA;  &quot;Left&quot;: 540&#xD;&#xA;}" Type="String" />
+    </Entity>
+    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="67b19864-df6d-400b-9f37-f41f1dd69c4a" AttributeSetName="StreamPick" EntityGUID="cb686948-965b-4b9b-a14a-920c0594b48c" Json="True" KeyGuid="0ccade9c-343a-4d4f-b037-66ed381d8cee">
+      <Value Key="StreamName" Value="[Params:AssetType]" Type="String">
+        <Dimension DimensionID="182" ReadOnly="false" />
+      </Value>
     </Entity>
   </Entities>
   <PortalFiles />
